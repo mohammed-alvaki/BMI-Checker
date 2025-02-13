@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --light-color: #e3ecf0;
+            --dark-color: #2b5464;
+            --skyBlue-color: #16c1f5;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            font-family: "Almarai", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 30px 10px;
+        }
+
+        .mySec {
+            background-color: white;
+        }
+
+        .title {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hr {
+            height: 3px;
+            background-color: var(--skyBlue-color);
+        }
+
+        @media(max-width:991px) {
+            .container {
+                max-width: 100% !important;
+            }
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .weight,
+        .length {
+            background-color: #f7fafb;
+        }
+
+        .weight input,
+        .length input {
+            border: 1px solid var(--skyBlue-color);
+            width: calc(100% - 50px);
+        }
+
+        #main-section input {
+            border-radius: 4px;
+        }
+
+        #main-section input:focus {
+            outline: none;
+        }
+
+        /* Remove arrows in Chrome, Safari, and Edge */
+        #main-section input[type="number"]::-webkit-outer-spin-button,
+        #main-section input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Remove arrows in Firefox */
+        #main-section input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        #main-section input::placeholder {
+            margin-left: auto;
+        }
+
+        #main-section .btnCalc {
+            background-color: var(--skyBlue-color);
+        }
+
+        #main-section .note {
+            border: 1px solid rgb(213, 175, 22);
+            background-color: #f3f7f9;
+        }
+
+        #main-section table :where(th, td) {
+            border: 1px solid #bcdee8;
+            padding: 10px 10px 20px;
+            font-size: 1.2rem;
+        }
+
+        #main-section :where(.weight-error, .length-error) {
+            color: red;
+            font-weight: lighter;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="title">
+        <div class="container">
+            <div class="row justify-content-center gx-0">
+                <div class="col-12 col-lg-10">
+                    <h1>حاسبة مؤشر كتلة الجسم BMI
+                    </h1>
+                    <div class="hr w-100"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="main-section">
+        <div class="container">
+            <div class="row justify-content-center gx-0">
+                <div class="col-12 col-lg-10 mySec">
+                    <img class="w-100 mb-3" src="bmi-calc.jpeg" alt="img">
+                    <div class="px-3">
+                        <p>حاسبة مؤشر كتلة الجسم ( BMI - Body Mass Index) هي أداة لتقييم الوزن الطبيعي أو زيادة الوزن.
+                            ويتم تقييم الوزن من خلال استخدام مؤشر كتلة الجسم الذي يفحص العلاقة بين طول ووزن الجسم.</p>
+                        <h2>يتم الحساب كما يلي:
+                        </h2>
+                        <p>مؤشر كتلة الجسم (BMI )= الطول بالمتر X الطول بالمتر / وزن الجسم بالكيلوغرام (يرجى قراءة
+                            المعادلة من اليسار إلى اليمين)</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-10 mySec px-3">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-4">
+                            <div class="weight mb-2">
+                                <input class="text-start me-2 p-1" type="number" min="0"
+                                    placeholder="وزن الجسم (مثلا 74.2)">كغم
+                            </div>
+                            <div class="weight-error mb-2">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="length mb-2">
+                                <input class="text-start me-2 p-1" type="number" min="0"
+                                    placeholder="الطول(مثلا 173)">سم
+                            </div>
+                            <div class="length-error mb-3">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <a class="btnCalc text-white fw-bold p-1 d-block text-center mb-5" href="#">احسب &larr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-10 mySec px-3">
+                    <p class="note p-2 mb-4">
+                        ملاحظة: هذه الحاسبة الطبية غير معدة للأطفال، النساء الحوامل أو المرضعات.
+                    </p>
+                    <hr class="mb-5">
+                    <p>تستخدم حاسبة مؤشر كتلة الجسم لحساب قيمة مؤشر كتلة الجسم (Body Mass Index) وهو مقياس للدهون في
+                        الجسم
+                        على أساس الطول والوزن، ويمكن تطبيقه على النساء والرجال البالغين.</p>
+                    <p>إذ تعمل حاسبة مؤشر كتلة الجسم على تقسيم الوزن بالكيلوغرام على مربع الطول بالأمتار لحساب قيمة
+                        مؤشر
+                        كتلة الجسم، ويمكن توضيح المعادلة كالآتي: </p>
+                    <p>مؤشر كتلة الجسم= الوزن بالكيلوغرام/ الطول بالمتر مربع.</p>
+                    <p>يتم استخدام هذه القيمة على نطاق واسع كمؤشر على ما إذا كان الشخص يتمتع بوزن صحي بالنسبة لطوله، إذ
+                        يتم
+                        استخدام القيمة الناتجة لتصنيف ما إذا كان الشخص يعاني من زيادة الوزن أو النحافة أو يملك وزنًا
+                        طبيعيًا
+                        بالاعتماد على النطاق التي تقع فيه القيمة.</p>
+                    <p>ويجدر التنويه أن مؤشر كتلة الجسم هو مقياس غير كامل لوزن الجسم الصحي، ولكنه مفيد كمؤشر لتحديد ما
+                        إذا
+                        كان يلزم إجراء أي اختبار أو إجراء إضافي.</p>
+                    <p> وهذا الجدول يوضح قيم مؤشر كتلة الجسم التي أوصت بها منظمة الصحة العالمية للنساء والرجال البالغين
+                        من
+                        العمر 20 عامًا أو أكبر: 
+                    </p>
+                </div>
+                <div class="col-12 col-lg-10 mySec px-3 pb-5">
+                    <table class="w-100">
+                        <thead>
+                            <tr>
+                                <th>الفئة</th>
+                                <th>قيمة مؤشر كتلة الجسم</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>النحافة الشديدة</td>
+                                <td>أقل من 16</td>
+                            </tr>
+                            <tr>
+                                <td>النحافة المعتدلة</td>
+                                <td>16 - 17</td>
+                            </tr>
+                            <tr>
+                                <td>النحافة الخفيفة</td>
+                                <td>17 - 18.5</td>
+                            </tr>
+                            <tr>
+                                <td>الوزن الطبيعي</td>
+                                <td>18.5 - 25</td>
+                            </tr>
+                            <tr>
+                                <td>زيادة الوزن</td>
+                                <td>25 - 30</td>
+                            </tr>
+                            <tr>
+                                <td>السمنة من الفئة الأولى</td>
+                                <td>30 - 35</td>
+                            </tr>
+                            <tr>
+                                <td>السمنة من الفئة الثانية</td>
+                                <td>35 - 40</td>
+                            </tr>
+                            <tr>
+                                <td>السمنة من الفئة الثالثة</td>
+                                <td>أكثر من 40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const myWeight = document.querySelector(".weight input");
+        const myLength = document.querySelector(".length input");
+        const weightError = document.querySelector(".weight-error");
+        const lengthError = document.querySelector(".length-error");
+        const btnCalc = document.querySelector(".btnCalc");
+
+        let weightOk = false;
+        let lengthOk = false;
+
+        myWeight.addEventListener("input", function () {
+            if (myWeight.value === "") {
+                weightError.innerHTML = "حقل الوزن مطلوب";
+                weightOk = false;
+            } else if (myWeight.value < 30 || myWeight.value > 250) {
+                weightError.innerHTML = "يحب أن يكون حقل الوزن بين 30 و 250";
+                weightOk = false;
+            } else {
+                weightOk = true;
+                weightError.innerHTML = "";
+            }
+        });
+
+        myLength.addEventListener("input", function () {
+            if (myLength.value === "") {
+                lengthError.innerHTML = "حقل الطول مطلوب";
+                lengthOk = false;
+            } else if (myLength.value < 100 || myLength.value > 250) {
+                lengthError.innerHTML = "يحب أن يكون حقل الطول بين 100 و 250";
+                lengthOk = false;
+            } else {
+                lengthOk = true;
+                lengthError.innerHTML = "";
+            }
+        });
+
+        btnCalc.addEventListener("click", function (event) {
+            event.preventDefault();
+            if (weightOk && lengthOk) {
+                let heightInMeters = parseFloat(myLength.value) / 100;
+                let weight = parseFloat(myWeight.value);
+
+                let bmi = weight / (heightInMeters ** 2);
+                let idealWeight;
+
+                if (bmi < 18.5) {
+                    idealWeight = 18.5 * (heightInMeters ** 2);
+                } else if (bmi >= 18.5 && bmi <= 25) {
+                    idealWeight = weight;
+                } else {
+                    idealWeight = 25 * (heightInMeters ** 2);
+                }
+
+                let bmiMessage;
+                let needMessage;
+
+                const formatBmi = (x) => {
+                    return (x % 1 === 0) ? Math.round(x) : x.toFixed(2);
+                };
+                const formatİdealWeight = (y) => {
+                    return (y % 1 === 0) ? Math.round(y) : y.toFixed(1);
+                };
+                const formatDifference = (idealWeight, weight) => {
+                    let difference = Math.abs(idealWeight - weight);
+                    return (difference % 1 === 0) ? Math.round(difference) : difference.toFixed(1);
+                };
+
+
+                if (bmi < 16) {
+                    bmiMessage = `نقص في الوزن BMI = ${formatBmi(bmi)}`;
+                    needMessage = `تحتاج لزيادة ${formatDifference(idealWeight, weight)} كغم من أجل الوصول إلى الوزن الطبيعي (${formatİdealWeight(idealWeight)})`;
+                } else if (bmi >= 16 && bmi <= 17) {
+                    bmiMessage = `نقص في الوزن BMI = ${formatBmi(bmi)}`;
+                    needMessage = `تحتاج لزيادة ${formatDifference(idealWeight, weight)} كغم من أجل الوصول إلى الوزن الطبيعي (${formatİdealWeight(idealWeight)})`;
+                } else if (bmi > 17 && bmi <= 18.5) {
+                    bmiMessage = `نقص في الوزن BMI = ${formatBmi(bmi)}`;
+                    needMessage = `تحتاج لزيادة ${formatDifference(idealWeight, weight)} كغم من أجل الوصول إلى الوزن الطبيعي (${formatİdealWeight(idealWeight)})`;
+                } else if (bmi > 18.5 && bmi <= 25) {
+                    bmiMessage = `وزن طبيعي BMI = ${formatBmi(bmi)}`;
+                    needMessage = " ";
+                } else if (bmi > 25 && bmi <= 30) {
+                    bmiMessage = `وزن زائد BMI = ${formatBmi(bmi)}`;
+                    needMessage = `تحتاج لإنقاص ${formatDifference(idealWeight, weight)} كغم من أجل الوصول إلى الوزن الطبيعي (${formatİdealWeight(idealWeight)})`;
+                } else if (bmi > 30 && bmi <= 35) {
+                    bmiMessage = `سمنة BMI = ${formatBmi(bmi)}`;
+                    needMessage = `تحتاج لإنقاص ${formatDifference(idealWeight, weight)} كغم من أجل الوصول إلى الوزن الطبيعي (${formatİdealWeight(idealWeight)})`;
+                } else if (bmi > 35 && bmi <= 40) {
+                    bmiMessage = `سمنة BMI = ${formatBmi(bmi)}`;
+                    needMessage = `تحتاج لإنقاص ${formatDifference(idealWeight, weight)} كغم من أجل الوصول إلى الوزن الطبيعي (${formatİdealWeight(idealWeight)})`;
+                } else {
+                    bmiMessage = `سمنة إلى درجة الخطورة BMI = ${formatBmi(bmi)}`;
+                    needMessage = `تحتاج لإنقاص ${formatDifference(idealWeight, weight)} كغم من أجل الوصول إلى الوزن الطبيعي (${formatİdealWeight(idealWeight)})`;
+                }
+
+                const targetUrl = `result.html?bmiMessage=${encodeURIComponent(bmiMessage)}&needMessage=${encodeURIComponent(needMessage)}`;
+                window.location.href = targetUrl;
+            }
+            else {
+                weightError.innerHTML = "يحب أن يكون حقل الوزن بين 30 و 250";
+                lengthError.innerHTML = "يحب أن يكون حقل الطول بين 100 و 250";
+            }
+        });
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
